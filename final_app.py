@@ -150,7 +150,7 @@ if get_or_init_state("route_ready", False):
     st.success(f"Estimated Fuel Cost: ₹**{st.session_state.total_cost:.2f}**")
 
     m = render_map_with_stops(st.session_state.stops, city_coords)
-    st_folium(m, width=700, height=300)
+    st_folium(m, width=700, height=200)
 
     df_report = generate_excel_report([(a, b, c, d, e) for a, b, c, d, e, f, g, h in st.session_state.route_details])
     st.download_button("📥 Download Route Report (Excel)", data=df_report, file_name="route_summary.xlsx")
